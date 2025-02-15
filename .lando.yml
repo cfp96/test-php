@@ -1,0 +1,6 @@
+name: php
+recipe: pantheon
+config:
+  framework: drupal
+  site: php-test-cperez
+  id: 89126c77-70d8-4192-b6c2-ce5fd9699c1d

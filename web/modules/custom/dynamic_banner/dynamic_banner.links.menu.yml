@@ -1,0 +1,6 @@
+dynamic_banner.config_settings_form:
+  title: 'Dynamic banner Settings Form'
+  description: 'The form to define the images to load'
+  parent: system.admin_config_services
+  route_name: dynamic_banner.settings
+  weight: 120

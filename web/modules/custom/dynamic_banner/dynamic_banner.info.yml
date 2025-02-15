@@ -1,0 +1,7 @@
+name: 'Dynamic Banner'
+type: module
+description: 'Dynamically changes the banner image based on the menu structure.'
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - drupal:menu_link_content

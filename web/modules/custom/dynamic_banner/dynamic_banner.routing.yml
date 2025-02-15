@@ -1,0 +1,7 @@
+dynamic_banner.settings:
+  path: '/admin/config/dynamic-banner'
+  defaults:
+    _form: '\Drupal\dynamic_banner\Form\BannerSettingsForm'
+    _title: 'Dynamic Banner Settings'
+  requirements:
+    _permission: 'administer site configuration'

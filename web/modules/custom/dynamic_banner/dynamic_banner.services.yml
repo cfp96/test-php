@@ -1,0 +1,4 @@
+services:
+  dynamic_banner.service:
+    class: 'Drupal\dynamic_banner\Service\BannerService'
+    arguments: ['@entity_type.manager', '@current_route_match', '@config.factory', '@logger.factory']
