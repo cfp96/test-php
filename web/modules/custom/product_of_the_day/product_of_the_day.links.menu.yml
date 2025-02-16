@@ -1,0 +1,20 @@
+product_of_the_day.admin:
+  title: 'Product of the Day'
+  description: 'Manage Product of the Day items'
+  parent: system.admin
+  route_name: product_of_the_day.list
+  weight: 0
+
+product_of_the_day.manage:
+  title: 'Manage Products'
+  description: 'Manage Product of the Day items'
+  parent: product_of_the_day.admin
+  route_name: product_of_the_day.list
+  weight: 0
+
+product_of_the_day.settings:
+  title: 'Settings For the block of product of the day'
+  description: 'Configure Product of the Day settings'
+  parent: system.admin_config_services
+  route_name: product_of_the_day.settings
+  weight: 0

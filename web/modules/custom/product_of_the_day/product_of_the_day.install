@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function product_of_the_day_schema() {
+  $schema['product_of_the_day_products'] = [
+    'description' => 'Stores product information.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary key: Unique product ID.',
+      ],
+      'name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'Product name.',
+      ],
+      'summary' => [
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => TRUE,
+        'description' => 'Product summary.',
+      ],
+      'image' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'Product image path.',
+      ],
+      'is_product_of_the_day' => [
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Flag for Product of the Day (1 = enabled, 0 = disabled).',
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  $schema['product_of_the_day_clicks'] = [
+    'description' => 'Stores CTA click data.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary key: Unique click ID.',
+      ],
+      'product_id' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => 'Foreign key: Product ID.',
+      ],
+      'click_time' => [
+        'type' => 'datetime',
+        'not null' => TRUE,
+        'description' => 'Timestamp of the click.',
+        'mysql_type' => 'DATETIME',
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}

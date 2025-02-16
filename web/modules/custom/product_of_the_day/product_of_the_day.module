@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function product_of_the_day_theme() {
+  return [
+    'product_of_the_day_block' => [
+      'variables' => ['product' => NULL],
+    ],
+    'product_of_the_day_detail' => [
+      'template' => 'product-of-the-day-detail',
+      'variables' => ['product' => NULL],
+    ],
+  ];
+}

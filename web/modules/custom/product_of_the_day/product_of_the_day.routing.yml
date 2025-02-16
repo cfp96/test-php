@@ -1,0 +1,59 @@
+product_of_the_day.list:
+  path: '/admin/product-of-the-day'
+  defaults:
+    _title: 'Products'
+    _controller: '\Drupal\product_of_the_day\Controller\ProductController::content'
+  requirements:
+    _permission: 'administer product of the day'
+
+product_of_the_day.form:
+  path: '/admin/product-of-the-day/add'
+  defaults:
+    _title: 'Add Product'
+    _form: '\Drupal\product_of_the_day\Form\ProductForm'
+  requirements:
+    _permission: 'administer product of the day'
+
+product_of_the_day.edit:
+  path: '/admin/product-of-the-day/edit/{product_id}'
+  defaults:
+    _title: 'Edit Product'
+    _form: '\Drupal\product_of_the_day\Form\ProductEditForm'
+  requirements:
+    _permission: 'administer product of the day'
+  options:
+    parameters:
+      product_id:
+        type: integer
+
+product_of_the_day.delete:
+  path: '/admin/product-of-the-day/delete/{product_id}'
+  defaults:
+    _controller: '\Drupal\product_of_the_day\Controller\ProductController::deleteProduct'
+    _title: 'Delete Product'
+  requirements:
+    _permission: 'administer product of the day'
+  options:
+    parameters:
+      product_id:
+        type: integer
+
+product_of_the_day.detail:
+  path: '/product/{product_id}'
+  defaults:
+    _controller: '\Drupal\product_of_the_day\Controller\ProductController::detail'
+    _title: 'Product Detail'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      product_id:
+        type: integer
+
+product_of_the_day.settings:
+  path: '/admin/config/product-of-the-day/settings'
+  defaults:
+    _form: '\Drupal\product_of_the_day\Form\SettingsForm'
+    _title: 'Product of the Day Settings'
+  requirements:
+    _permission: 'administer site configuration'
