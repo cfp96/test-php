@@ -1,0 +1,28 @@
+uuid: d93a0a83-f29f-46c1-8d8d-c928d412daf2
+langcode: en
+status: true
+dependencies:
+  module:
+    - dynamic_banner
+    - node
+  theme:
+    - olivero
+id: olivero_dynamicbannerblock
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: dynamic_banner_block
+settings:
+  id: dynamic_banner_block
+  label: 'Dynamic Banner Block'
+  label_display: '0'
+  provider: dynamic_banner
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      banner_pages: banner_pages
