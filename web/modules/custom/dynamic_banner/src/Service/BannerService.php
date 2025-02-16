@@ -85,9 +85,17 @@ class BannerService {
 
       if ($menu_link_content) {
         // Get the parent menu link
+        $title = $menu_link_content->getTitle();
         $parent = $menu_link_content->get('parent')->getString();
 
         $this->logger->get('dynamic_banner')->notice("Menu UUID: $uuid | Parent: $parent");
+
+        if (empty($parent)) {
+          $this->logger->get('dynamic_banner')->notice("No parent found. Checking if this is Root A or Root B.");
+          if ($title === "Root A" || $title === "Root B") {
+            return $this->getImageByRoot($title);
+          }
+        }
 
         // Check if the parent is another menu link
         if (strpos($parent, 'menu_link_content:') !== false) {
