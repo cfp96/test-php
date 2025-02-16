@@ -1,0 +1,8 @@
+name: 'Product of the Day'
+type: module
+description: 'Provides a block to display a random Product of the Day.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:block
+  - drupal:views

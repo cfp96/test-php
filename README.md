@@ -1,22 +1,32 @@
-# Composer-enabled Drupal template
+Project Documentation
+Overview
+This project utilizes Drupal 10 as the Content Management System (CMS) and is built on PHP 8.2. The database system is MariaDB (version 10.4.25), hosted on Pantheon. The live environment can be accessed at:
+https://test-php-test-cperez.pantheonsite.io/
 
-This is Pantheon's recommended starting point for forking new [Drupal](https://www.drupal.org/) upstreams
-that work with the Platform's Integrated Composer build process. It is also the
-Platform's standard Drupal 9 upstream.
+Technical Specifications
+CMS: Drupal 10
 
-Unlike with earlier Pantheon upstreams, files such as Drupal Core that you are
-unlikely to adjust while building sites are not in the main branch of the 
-repository. Instead, they are referenced as dependencies that are installed by
-Composer.
+PHP Version: PHP 8.2
 
-For more information and detailed installation guides, please visit the
-Integrated Composer Pantheon documentation: https://pantheon.io/docs/integrated-composer
+Database:
 
-## Contributing
+Version: 10.4.25-MariaDB-log
 
-Contributions are welcome in the form of GitHub pull requests. However, the
-`pantheon-upstreams/drupal-composer-managed` repository is a mirror that does not
-directly accept pull requests.
+System: MariaDB
 
-Instead, to propose a change, please fork [pantheon-systems/drupal-composer-managed](https://github.com/pantheon-systems/drupal-composer-managed)
-and submit a PR to that repository.
+Host: Pantheon
+
+Custom Modules
+1. Dynamic Banner Module
+A custom module named Dynamic Banner was developed to manage the configuration of the background image and implement the logic for menu links.
+
+2. Product of the Day Module
+A custom module named Product of the Day was created to handle daily product management. The following admin URLs are available for this module:
+
+Add, Edit, and Delete Products: <site-url>/admin/product-of-the-day
+
+Settings: <site-url>/admin/config/product-of-the-day/settings
+
+Access and Deployment
+The live environment is hosted on Pantheon and can be accessed at:
+https://test-php-test-cperez.pantheonsite.io/

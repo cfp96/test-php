@@ -1,0 +1,28 @@
+uuid: 4d5ffc92-7a4b-4fe4-8da7-dcd7aed0f719
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - product_of_the_day
+  theme:
+    - olivero
+id: olivero_productoftheday
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: product_of_the_day_block
+settings:
+  id: product_of_the_day_block
+  label: 'Product of the Day'
+  label_display: visible
+  provider: product_of_the_day
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      page: page

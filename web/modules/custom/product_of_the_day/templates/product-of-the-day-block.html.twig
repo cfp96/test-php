@@ -1,0 +1,10 @@
+<div class="product-of-the-day">
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.summary }}</p>
+  {% if product.image %}
+    <img src="{{ product.image }}" alt="{{ product.name }}" width="100" height="100">
+  {% endif %}
+  <a href="{{ url('product_of_the_day.detail', {'product_id': product.id}) }}" class="button">
+    {{ 'View Details'|t }}
+  </a>
+</div>
